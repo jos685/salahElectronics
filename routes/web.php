@@ -18,7 +18,7 @@ Route::get('/', function(){
 //fetch all products from db and pass datato components
 Route::get('/products', function(){
     $products = Product::all();
-    return Inertia::render('ProductShow', [
+    return Inertia::render('ProductsShow', [
         'products' => $products,
     ]);
 })->name('products');

@@ -1,11 +1,29 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPercent, faTruck } from '@fortawesome/free-solid-svg-icons';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const Offers = () => {
     const offerBoxes = [
-        { title: 'Free Delivery for Orders within CBD', description: 'Within Nairobi, its free' },
-        { title: 'Customer Support 24/7', description: 'Dont worry about your delivery, you can call to enquire at any time' },
-        { title: '30% Discount First Order', description: 'For all the commodities' },
-        { title: 'Payment on delivery', description: 'Having Trust Issues, Pay after receiving and confirming your goods' },
+       
+        {
+             title: (
+                <>
+                <FontAwesomeIcon icon={faPercent} className="mr-2 text-green-500" />
+                 30% DISCOUNT on First Order
+                 </>
+                 ),
+                  description: 'For all the commodities'
+                 },
+        {
+             title: (
+                <>
+                <FontAwesomeIcon icon={faTruck} className="mr-2 text-blue-500" />
+                Payment On Delivery
+                </>
+             ),
+                 description: 'Having Trust Issues, Pay after receiving and confirming your goods' 
+                },
 
     ];
    return(
@@ -13,7 +31,7 @@ const Offers = () => {
         {offerBoxes.map((offer, index) => (
             <div
                 key={index}
-                className="bg-gray-100 rounded-md p-4 flex items-center justify-center text-center text-sm font-semibold text-gray-700 hover:bg-bray-100 cursor-pointer transition duration-200 ease-in-out"
+                className="bg-gray-300 rounded-md p-4 flex items-center justify-center text-center text-sm font-semibold text-gray-700 hover:bg-bray-100 cursor-pointer transition duration-200 ease-in-out"
                 >
                 {offer.title}
             </div>

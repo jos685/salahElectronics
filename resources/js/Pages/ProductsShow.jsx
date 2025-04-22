@@ -1,10 +1,34 @@
 import React from 'react';
 import { Link } from '@inertiajs/react';
+import Header from '../Components/Header';
+import Offers from '../Components/Offers';
+import Location from '../Components/Location';
+import CategoryShowcase from '@/Components/CategoryShowcase';
+
+
+
 
 const ProductsPage = (props) => {
+
+
+<div className="fixed top-0 left-0 w-full bg-white z-10">        
+           
+  </div>
+
+
   const { products } = props;
 
   return (
+    <div className='sticky top-0 bg-white z-10'>
+      <Location />
+       
+    <Header /> 
+       
+        <Offers/>  
+        <CategoryShowcase/>
+   
+
+        
     <div className="bg-gray-100 py-8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-2xl font-bold text-gray-800 mb-6">Our Products</h1>
@@ -33,6 +57,7 @@ const ProductsPage = (props) => {
           ))}
         </div>
       </div>
+    </div>
     </div>
   );
 };
