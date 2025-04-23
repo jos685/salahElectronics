@@ -5,11 +5,12 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const CategoryShowcase = () => {
     const [categories, setCategories] = React.useState([
-        { id: 'mobile-accessories', name: 'Mobile Accessories', imageUrl: 'assets/images/dark.jpeg' },
-        { id: 'phones-tablets', name: 'Phones & Tablets', imageUrl: 'assets/headers.jpeg' },
-        { id: 'tv-audio', name: 'TV & Audio', imageUrl: 'assets/images/images(1).jpeg' },
-        { id: 'computing', name: 'Computing', imageUrl: 'assets/images/yellow.jpeg' },
-        { id: 'cables', name: 'Cables', imageUrl: 'assets/images/cables.jpeg' },
+        { id: 'mobile-accessories', name: 'Mobile Accessories', imageUrl: 'assets/images/bg.jpg', link: '/Mobile'},
+        { id: 'phones-tablets', name: 'Phones & Tablets', imageUrl: 'assets/images/headers.jpeg', link: '/Phones'},
+        { id: 'tv-audio', name: 'TV & Audio', imageUrl: 'assets/images/image.jpeg', link: '/TvAudio'},
+        { id: 'computing', name: 'Computing', imageUrl: 'assets/images/yellow.jpeg', link: '/Computer'},
+        { id: 'cables', name: 'Cables', imageUrl: 'assets/images/cables.jpeg', link: '/Cables'},
+       
     ]);
 
     const onDragEnd = (result) => {   //calleed when the drag ends
@@ -42,16 +43,21 @@ const CategoryShowcase = () => {
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
                         className="relative w-32 h-32 md:w-48 md:h-48 rounded-md shadow-md cursor-grab overflow-hidden"
-                      >
-                        <img
+                      >                     
+                      
+                         <img
                           src={category.imageUrl}
                           alt={category.name}
                           className="w-full h-full object-cover transition-transform transform hover:scale-105"
                           onClick={() => window.location.href = category.link} // Simple navigation
                           style={{ cursor: 'pointer' }}
-                        />
+                         />
+
+                         
                         <div className="absolute bottom-0 left-0 w-full bg-gray-900 bg-opacity-60 text-white text-center py-2 text-xs md:text-sm">
                           {category.name}
+
+                         
                         </div>
                       </div>
                     )}

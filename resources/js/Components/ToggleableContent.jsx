@@ -9,10 +9,10 @@ const ToggleableContent = () => {
    };
 
    return(
-      <div style={{position: 'relative'}}>
+      <div style={{position: 'relative' }}>
         <button
         id='toggleButton'
-        className="px-4 py-2 my-10 bg-blue-500 text-white rounded cursor-pointer hover:bg-blue-700 focus:outline-none focus:ring-blue-300 active:bg-blue-800" 
+        className="px-3 py-2 my-10 bg-blue-500 text-white rounded cursor-pointer hover:bg-blue-700 focus:outline-none focus:ring-blue-300 active:bg-blue-800" 
         onClick={handleToggle}
         >
          <i className="fas fa-bars"></i>
@@ -20,7 +20,7 @@ const ToggleableContent = () => {
         </button>
         <div
          id='contentContainer'
-         className={`mt-2 p-4 border-gray-300 rounded ${isVisible ? '' : 'hidden'}`}
+         className={`mt-2 p-4 border-gray-700 rounded ${isVisible ? '' : 'hidden'}`}
          style={{
             position: isVisible ? 'absolute' : 'relative',  // Absolute when visible
             top: isVisible ? '100%' : 'auto',        // Position it

@@ -5,10 +5,10 @@ import { Link } from '@inertiajs/react';
 const Header = () => {
   const[cartCount, setCartCount] = React.useState(3);
     return (
-      <header className="bg-gray-700 shadow-md py-4">
+      <header className="bg-gray-700 shadow-md py-20 h-5">
         <div className="container mx-auto flex items-center justify-between">
                   
-          <div className="flex items-center">
+          <div className="flex items-center ">
             <input
               type="text"
               placeholder="Search for products..."

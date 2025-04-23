@@ -8,14 +8,36 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Models\Product;
+use App\Http\Controllers\HomeController;
 
 
 
-Route::get('/', function(){
+Route::get('/', function (){
     return Inertia::render('HomePage');
 });
 
-//fetch all products from db and pass datato components
+Route::get('/Cables', function (){
+    return Inertia::render('Cables');
+});
+
+Route::get('/Computer', function (){
+    return Inertia::render('Computer');
+});
+
+Route::get('/Mobile', function (){
+    return Inertia::render('Mobile');
+});
+
+Route::get('/Phone', function (){
+    return Inertia::render('Phone');
+});
+
+Route::get('/TvAudio', function (){
+    return Inertia::render('TvAudio');
+});
+
+
+//fetch all products from db and pass data to components
 Route::get('/products', function(){
     $products = Product::all();
     return Inertia::render('ProductsShow', [

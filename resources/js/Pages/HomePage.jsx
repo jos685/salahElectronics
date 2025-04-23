@@ -6,6 +6,8 @@ import ToggleableContent from '@/Components/ToggleableContent';
 import Offers from '../Components/Offers';
 import Location from '../Components/Location';
 import CategoryShowcase from '@/Components/CategoryShowcase';
+import Welcome from '../Components/Welcome';
+
 
 
 const HomePage = () => {
@@ -20,9 +22,12 @@ const HomePage = () => {
         
         </div>        
         <Nav />
+        <Welcome />
         <Offers/>  
         <CategoryShowcase/>
      
+        
+      
                  
     </div>
   );

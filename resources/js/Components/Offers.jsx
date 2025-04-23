@@ -8,19 +8,19 @@ const Offers = () => {
        
         {
              title: (
-                <>
+                <div className='text-black'>
                 <FontAwesomeIcon icon={faPercent} className="mr-2 text-green-500" />
                  30% DISCOUNT on First Order
-                 </>
+                 </div>
                  ),
                   description: 'For all the commodities'
                  },
         {
              title: (
-                <>
+                <div className='text-black'>
                 <FontAwesomeIcon icon={faTruck} className="mr-2 text-blue-500" />
                 Payment On Delivery
-                </>
+                </div>
              ),
                  description: 'Having Trust Issues, Pay after receiving and confirming your goods' 
                 },
