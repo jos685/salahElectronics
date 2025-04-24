@@ -28,7 +28,7 @@ Route::get('/Mobile', function (){
     return Inertia::render('Mobile');
 });
 
-Route::get('/Phone', function (){
+Route::get('/Phones', function (){
     return Inertia::render('Phone');
 });
 

@@ -4,7 +4,7 @@ import Location from '../Components/Location';
 import ToggleableContent from '@/Components/ToggleableContent';
 import Nav from '../Components/Nav';
 
-const Cables = () => {
+const Computer = () => {
     return (
         <div className="flex flex-col bg-gray-100">
             <Location />
@@ -18,4 +18,4 @@ const Cables = () => {
     );
 };
 
-export default Cables;
+export default Computer;

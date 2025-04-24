@@ -69,7 +69,10 @@ const Footer = () =>{
                 <a href="/terms" className='hover:underline ml-4'>Terms of Service</a>
             </p>
             <p className='mt-2 text-gray-400'>
-                Located in Nairobi, Nairobi County, Kenya.
+                Located in Nairobi County, Kenya.
+            </p>
+            <p className='mt-2 text-black'>
+                All rights reserved, Designed by Joseph Oduor
             </p>
         </div>
     </div>

@@ -3,16 +3,16 @@ import { Link } from '@inertiajs/react';
 
 
 const Header = () => {
-  const[cartCount, setCartCount] = React.useState(3);
+  const[cartCount, setCartCount] = React.useState(0);
     return (
-      <header className="bg-gray-700 shadow-md py-20 h-5">
+      <header className="bg-gray-700 shadow-md py-20 md:py-6 h-20">
         <div className="container mx-auto flex items-center justify-between">
                   
           <div className="flex items-center ">
             <input
               type="text"
               placeholder="Search for products..."
-              className="border border-gray-300 rounded-md px-4 py-2 mr-4 focus:outline-none focus:ring-2 focus:ring-blue-500 W-1/3 length-full"
+              className="border border-gray-300 rounded-md px-4 py-2 mr-4 focus:outline-none focus:ring-2 focus:ring-blue-500 W-full md:w-64 lg:w-1/3"
             />
             <button className="bg-blue-600 hover:bg-gray-500 text-white py-2 px-4 focus:outline-none rounded-md ">
           <i className="fas fa-search"></i>
@@ -28,7 +28,6 @@ const Header = () => {
             )}
           </a>
         </div>
-
 
         <div>
             <nav>

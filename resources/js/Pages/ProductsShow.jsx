@@ -1,17 +1,12 @@
 import React from 'react';
 import { Link } from '@inertiajs/react';
-import Header from '../Components/Header';
+import Layout from '../Layouts/Layout';
 import Offers from '../Components/Offers';
-import Location from '../Components/Location';
 import CategoryShowcase from '@/Components/CategoryShowcase';
-import Footer from '../Components/Footer';
-import ToggleableContent from '@/Components/ToggleableContent';
-
 
 
 
 const ProductsPage = (props) => {
-
 
 <div className="fixed top-0 left-0 w-full bg-white z-10">        
            
@@ -19,15 +14,10 @@ const ProductsPage = (props) => {
   const { products } = props;
 
   return (
-    <div className='sticky top-0 bg-white z-10'>
-      <Location />
+    <div className='sticky top-0 bg-gray-300 z-10'>
+      <Layout>
        
-      <div className='bg-gray-700 flex items-center  lg:grid lg:grid-cols-3 gap-6'>
-        <ToggleableContent/>
-        <Header /> 
         
-        </div>  
-       
         <Offers/>  
         <CategoryShowcase/>
         
@@ -45,28 +35,30 @@ const ProductsPage = (props) => {
                 />
               </div>
               <div className="p-4">
-                <h3 className="text-sm sm:text-md font-semibold text-gray-700 mb-0.5 line=clamp-2">{product.name}</h3>
+                <h3 className="text-xs sm:text-md font-semibold text-gray-700 mb-0.5 line=clamp-2">{product.name}</h3>
                 <p className="text-xs text-gray-600 sm:text-sm mb-1 line-clamp-1">{product.description}</p>
-                <p className="text-sm font-bold text-green-500 mb-2">Price: Ksh {product.price}</p>
-                <div className='grid grid-cols-2'>
+                <p className="text-xs font-bold text-green-500 mb-2">Price: Ksh {product.price}</p>
+                
+                <div className='grid grid-cols-1'>
                  
                 <Link
                   href={`/products/${product.id}`}
-                  className=" bg-gray-800 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded transition duration-200 text-xs sm:text-sm"
+                  className=" bg-gray-800 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded transition duration-200 text-xs sm:text-sm mb-2"
                 >
                   View Details
                 </Link>
                 
-                <button className=" bg-green-600 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded transition duration-200 ml-2 text-xs sm:text-sm">
+                <button className=" bg-green-600 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded transition duration-200 text-xs sm:text-sm ">
                  Add to Cart</button>
                 </div>
+
               </div>
             </div>
           ))}
         </div>
       </div>
     </div>
-    <Footer/>
+    </Layout>
     </div>
 
     

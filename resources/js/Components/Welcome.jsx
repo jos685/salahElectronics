@@ -2,9 +2,12 @@ import React, { useState, useEffect } from 'react';
 
 const WelcomeSection = () => {
   const images = [
-    { src: '/assets/images/bg.jpg', alt: 'Welcome', link: '/products' },
+    
     { src: '/assets/images/covers.jpg', alt: 'Welcome', link: '/products' },
     { src: '/assets/images/yes.jpg', alt: 'Welcome', link: '/products' },
+    { src: '/assets/images/back.jpg', alt: 'Welcome', link: '/products' },
+    { src: '/assets/images/pics.jpg', alt: 'Welcome', link: '/products' },
+   
     // Add more image objects with src, alt, and link
   ];
 
@@ -19,8 +22,8 @@ const WelcomeSection = () => {
   }, [images.length]);
 
   return (
-    <div className="relative w-full overflow-hidden">
-      <div className="relative h-64 md:h-96 lg:h-[600px]"> {/* Responsive height */}
+    <div className="relative w-full overflow-hidden pt-40">
+      <div className="relative h-80 md:h-96 lg:h-[600px]"> {/* Responsive height */}
         {images.map((image, index) => (
           <div
             key={index}
