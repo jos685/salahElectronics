@@ -1,21 +1,22 @@
 import React from 'react';
-import Header from '../Components/Header';
-import Location from '../Components/Location';
-import ToggleableContent from '@/Components/ToggleableContent';
-import Nav from '../Components/Nav';
+import Layout from '@/Layouts/Layout';
+import ScrollSection from '@/components/ScrollSection'; // assuming you made it reusable
 
-const Computer = () => {
-    return (
-        <div className="flex flex-col bg-gray-100">
-            <Location />
-            <div className='bg-gray-700 flex items-center lg:grid lg:grid-cols-3 gap-6'>
-                <ToggleableContent/>
-                <Header /> 
-                
-            </div>
-            <Nav/>        
-        </div>
-    );
+// Import product arrays here (like keyboards, mice, etc.)
+
+const ComputerAccessories = () => {
+  return (
+    <Layout>
+      <div className="container mx-auto px-4 py-10">
+        <h1 className="text-3xl font-bold mb-10 text-center">Computer Accessories</h1>
+        <ScrollSection title="Keyboards" products={keyboards} maxPerPage={4} />
+        <ScrollSection title="Mice" products={mice} maxPerPage={4} />
+        <ScrollSection title="Headsets" products={headsets} maxPerPage={4} />
+        <ScrollSection title="Webcams" products={webcams} maxPerPage={4} />
+        <ScrollSection title="USB Hubs" products={hubs} maxPerPage={4} />
+      </div>
+    </Layout>
+  );
 };
 
-export default Computer;
+export default ComputerAccessories;

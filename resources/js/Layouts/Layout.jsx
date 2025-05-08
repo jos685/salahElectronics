@@ -1,23 +1,26 @@
 // resources/js/Layouts/Layout.jsx
 import React from 'react';
- 
 import Footer from '@/Components/Footer'; 
-import { CartProvider } from '@/Context/CartContext'; 
-import Location from '@/Components/Location'; 
+
 import Head from '@/Components/Head';
-import Welcome from '@/Components/Welcome';
+
+
+import CartIcon from '@/Components/CartIcon';
 
 const Layout = ({ children }) => {
   return (
-    <CartProvider>
-      
-        <Location />
+    
+      <div>
+       
          <Head/>
-         <Welcome/>           
+        <CartIcon />
+       
+
         <main className='pt-[130px]'>{children}</main>
         <Footer />
-      
-    </CartProvider>
+
+        </div>
+    
   );
 };
 

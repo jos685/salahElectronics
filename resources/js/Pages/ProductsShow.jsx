@@ -1,30 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from '@inertiajs/react';
 import Layout from '../Layouts/Layout';
-import Offers from '../Components/Offers';
-import CategoryShowcase from '@/Components/CategoryShowcase';
 
+import CategoryShowcase from '@/Components/CategoryShowcase';
+import { useCart } from '@/Context/CartContext';
+import Welcome from '../Components/Welcome';
+import ProductDetailsModal from '@/Components/ProductDetailsModal';
 
 
 const ProductsPage = (props) => {
+  const { addToCart } = useCart();
 
-<div className="fixed top-0 left-0 w-full bg-white z-10">        
-           
-  </div>
+  // state for managing modal
+  const[isModalOpen, setIsModalOpen ] = useState(false);
+   // state to hold the data of product currently viewd
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const handleAddToCart = (product) => {
+    addToCart(product);
+  };
+
+  //New handler for clicking view details button
+  const handleViewDetailsClick = (product) =>{
+    setSelectedProduct(product);
+    setIsModalOpen(true);
+  };
+
+  //New handler for closing Modal
+  const handleCloseModal= ()=> {
+    setIsModalOpen(false);
+    setSelectedProduct(null);
+  };
+
   const { products } = props;
 
   return (
-    <div className='sticky top-0 bg-gray-300 z-10'>
-      <Layout>
-       
-        
-        <Offers/>  
+    <div className='sticky  bg-gray-300 '>
+      <Layout>  
+        <Welcome />
         <CategoryShowcase/>
         
-    <div className="bg-gray-200 rounded-md shadow-md p-2 sm:p-4 flex flex-col">
+    <div className="bg-gray-500 rounded-md shadow-md p-2 sm:p-4 flex flex-col">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-2xl font-bold text-gray-800 mb-6">Our Products</h1>
-        <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-4 h-30">
+        <h1 className="text-2xl font-bold text-blue-800 mb-6">Our Products</h1>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 min-h">
           {products.map((product) => (
             <div key={product.id} className="bg-white rounded-md shadow-md overflow-hidden">
               <div className="relative group">
@@ -34,22 +53,26 @@ const ProductsPage = (props) => {
                   className="w-full h-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
-              <div className="p-4">
-                <h3 className="text-xs sm:text-md font-semibold text-gray-700 mb-0.5 line=clamp-2">{product.name}</h3>
-                <p className="text-xs text-gray-600 sm:text-sm mb-1 line-clamp-1">{product.description}</p>
+              <div className="p-1 flex flex-col h-full">
+                <h3 className="text-xs sm:text-md font-semibold text-gray-700 mb-0.5 line-clamp-2">{product.name}</h3>
+               { /*<p className="text-xs text-gray-600 sm:text-sm mb-1 line-clamp-1">{product.description}</p> */}
                 <p className="text-xs font-bold text-green-500 mb-2">Price: Ksh {product.price}</p>
                 
                 <div className='grid grid-cols-1'>
                  
-                <Link
-                  href={`/products/${product.id}`}
-                  className=" bg-gray-800 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded transition duration-200 text-xs sm:text-sm mb-2"
+                <button
+                onClick={() => handleViewDetailsClick(product)}
+                 // href={`/products/${product.id}`}
+                  className=" bg-gray-900 hover:bg-green-600 text-white font-bold py-2 px-2 rounded transition duration-200 text-xs sm:text-sm mb-1"
                 >
                   View Details
-                </Link>
+                </button>
                 
-                <button className=" bg-green-600 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded transition duration-200 text-xs sm:text-sm ">
-                 Add to Cart</button>
+                <button
+                onClick={() => handleAddToCart(product)}
+                className=" bg-gray-700 hover:bg-blue-600 text-white font-bold py-2 px-2 rounded transition duration-200 text-xs sm:text-sm ">
+                 Add to Cart
+                 </button>
                 </div>
 
               </div>
@@ -59,6 +82,14 @@ const ProductsPage = (props) => {
       </div>
     </div>
     </Layout>
+
+      {/* Include the Modal component here */}
+      {/* Pass state to control visibility and the selected product data */}
+      <ProductDetailsModal
+        isOpen={isModalOpen}
+        product={selectedProduct} // Pass the product object to the modal
+        onClose={handleCloseModal} // Pass the close handler
+      />
     </div>
 
     

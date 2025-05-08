@@ -11,7 +11,7 @@ const Offers = () => {
                 <div className='text-black'>
                 <FontAwesomeIcon icon={faPercent} className="mr-2 text-green-500" />
                 <span className='text-sm sm:text-base'> 30% DISCOUNT</span>
-                <span className='hidden sm:inline'>on First Order</span>
+                <span className=' sm:inline'> on First Order</span>
                  
                  </div>
                  ),

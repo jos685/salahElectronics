@@ -6,10 +6,11 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 const CategoryShowcase = () => {
     const [categories, setCategories] = React.useState([
         { id: 'mobile-accessories', name: 'Phone & Tablets', imageUrl: 'assets/images/bg.jpg', link: '/Mobile'},
+        { id: 'cables', name: 'Cables', imageUrl: 'assets/images/cables.jpeg', link: '/Cables'},
         { id: 'phones-tablets', name: 'Mobile Accesories', imageUrl: 'assets/images/headers.jpeg', link: '/Phones'},
         { id: 'tv-audio', name: 'TV & Audio', imageUrl: 'assets/images/image.jpeg', link: '/TvAudio'},
-        { id: 'computing', name: 'Computing', imageUrl: 'assets/images/yellow.jpeg', link: '/Computer'},
-        { id: 'cables', name: 'Cables', imageUrl: 'assets/images/cables.jpeg', link: '/Cables'},
+        
+        
        
     ]);
 

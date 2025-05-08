@@ -5,7 +5,7 @@ import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Head, Link, useForm } from '@inertiajs/react';
-
+import Footer from '@/Components/Footer';
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
         name: '',
@@ -103,7 +103,10 @@ export default function Register() {
                     <InputError message={errors.password_confirmation} className="mt-2" />
                 </div>
 
-                <div className="flex items-center justify-end mt-4">
+                <div className="flex items-center justify-center mt-4">
+                <PrimaryButton className="mr-4" disabled={processing}>
+                        Register
+                    </PrimaryButton>
                     <Link
                         href={route('login')}
                         className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
@@ -111,10 +114,10 @@ export default function Register() {
                         Already registered?
                     </Link>
 
-                    <PrimaryButton className="ml-4" disabled={processing}>
-                        Register
-                    </PrimaryButton>
+
+                    
                 </div>
+                <Footer />
             </form>
         </GuestLayout>
     );

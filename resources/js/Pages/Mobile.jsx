@@ -84,13 +84,14 @@ const MobileAccessories = () => {
 
   return (
     
-    <div className="bg-gray-50 min-h-screen">
+    <div className="bg-gray-300 min-h-screen">
      <Layout>
       {/* Hero Section */}
-      <section className="relative bg-[url('/assets/images/mobile-accessories-banner.jpg')] bg-cover bg-center h-64 flex items-center justify-center text-white">
-        <div className="bg-black p-6 rounded-md text-center">
-          <h1 className="text-blue-500 text-3xl md:text-5xl font-bold">Phone & Tablets</h1>
-          <p className="mt-4 text-lg">Explore our latest collection of mobile accessories</p>
+      <section className="relative bg-[url('/assets/images/back.jpg')] bg-cover  bg-center h-80 flex items-center justify-center text-white">
+      
+        <div className=" p-6 rounded-md text-center mt-20">
+          <h1 className="text-black text-3xl md:text-5xl font-bold">Phone & Tablets</h1>
+          <p className="text-black mt-4 text-lg">Explore our latest collection of mobile accessories</p>
         </div>
       </section>
 
@@ -135,8 +136,9 @@ const MobileAccessories = () => {
             </div>
           ))}
         </div>
+         
       </section>
-      </Layout>
+     </Layout>
     </div>
     
   );

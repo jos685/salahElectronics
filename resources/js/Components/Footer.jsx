@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footer = () =>{
     return(
-        <footer className='bg-gray-700 text-white py-8'>
+        <footer className='bg-gray-500 text-white py-8'>
     <div className='container mx-auto px-4'>
         {/* Newsletter Section */}
         <div className='mb-8 text-center md:text-left'>
@@ -24,7 +24,7 @@ const Footer = () =>{
         </div>
 
         {/* Main Footer Content Grid */}
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-sm'>
+        <div className='grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 text-sm'>
             <div>
                 <h3 className='font-semibold mb-2'>Quick Links</h3>
                 <ul className='list-none p-0'>
